@@ -114,5 +114,12 @@ with Session(engine) as session:
     session.commit()
 # 4) Use pandas to print one of the tables as dataframes using read_sql function
 
-df = pd.read_sql('select * from publishers',engine)
-print (df)
+query = 'selct * from publishers'
+
+#Con Pandas 2.2.0
+with engine.connect() as conn:
+    df = pd.read_sql(
+        sql=query,
+        con=conn.connection
+    )
+print(df)
