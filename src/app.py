@@ -115,7 +115,7 @@ with Session(engine) as session:
 # 4) Use pandas to print one of the tables as dataframes using read_sql function
 query = 'select * from publishers'
 
-# con pandas 2.2.0
+#Con Pandas 2.2.0
 with engine.connect() as conn:
     df = pd.read_sql(
         sql=query,
