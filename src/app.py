@@ -114,7 +114,7 @@ with Session(engine) as session:
 
 # 4) Use pandas to print one of the tables as dataframes using read_sql function
 
-query = {'select * from publishers', 'select * from authors', 'select * from books', 'select * from book_authors'}
+query = ('select * from publishers', 'select * from authors', 'select * from books', 'select * from book_authors')
 
 #Con Pandas 2.2.0
 for n in range(len(query)):
