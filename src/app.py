@@ -113,7 +113,9 @@ with Session(engine) as session:
 
 
 # 4) Use pandas to print one of the tables as dataframes using read_sql function
-query = 'select * from publishers'
+selector={"publishers","authors","books","book_authors"}
+query = f'select * from {selector}'
+
 
 #Con Pandas 2.2.0
 with engine.connect() as conn:
